@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Troco · Publicar · USC</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- =====================================================================
+       PANTALLA: PUBLICAR OFERTA               Propietario: P3 (tome123456)
+       Solo se editan este archivo y js/publicar.js.
+       ===================================================================== -->
+  <div class="app">
+    <header id="topbar"></header>
+
+    <main class="contenido">
+      <section class="hero">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8592a6;margin-bottom:7px">
+          USC · Santiago de Compostela
+        </div>
+        <h1>Cuenta qué necesitas</h1>
+        <p>En dos líneas. Cuanto más claro, más fácil es que alguien te eche una mano.</p>
+      </section>
+
+      <form id="form-oferta" class="bloque" novalidate>
+        <label class="label" for="titulo">Título</label>
+        <input class="input" id="titulo" maxlength="70" required
+               placeholder="Ej. Apuntes de Estadística II">
+        <div class="usuario-detalle" id="contador-titulo" style="text-align:right;margin-top:5px">0/70</div>
+
+        <label class="label" for="descripcion">Descripción</label>
+        <textarea class="textarea" id="descripcion" maxlength="280"
+                  placeholder="Qué te pasa, para qué es y cuándo lo necesitas…"></textarea>
+
+        <div id="aviso-contenido" class="oculto" role="alert"
+             style="margin-top:12px;padding:10px 12px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:12.5px;line-height:1.45">
+          <b>Esto no parece apropiado.</b> Revísalo antes de seguir: aquí venimos a ayudarnos.
+        </div>
+
+        <label class="label" for="area">Área de la petición</label>
+        <select class="select" id="area"></select>
+        <div class="usuario-detalle" style="margin-top:5px">De qué va lo que pides: Matemáticas, Salud, Lenguaje…</div>
+
+        <label class="label" for="categoria">Categoría</label>
+        <select class="select" id="categoria"></select>
+
+        <label class="label" for="carrera">Tu carrera</label>
+        <select class="select" id="carrera"></select>
+        <div class="usuario-detalle" style="margin-top:5px">Aparecerá en tu tarjeta. Puedes cambiarla cuando quieras.</div>
+
+        <p class="usuario-detalle" style="margin:14px 2px 0;line-height:1.5">
+          Publica cosas útiles y con respeto. Nada que moleste a nadie.</p>
+
+        <button class="btn btn-primario btn-bloque" id="btn-publicar" type="submit" disabled>Publicar</button>
+        <a class="btn btn-secundario" style="margin-top:8px" href="index.html">Cancelar</a>
+      </form>
+
+      <div class="seccion-titulo"><h2>Vista previa</h2><span class="usuario-detalle">Así se verá en el tablón</span></div>
+      <div id="preview"></div>
+
+      <p class="usuario-detalle" style="text-align:center;margin-top:14px;line-height:1.5">
+        Al publicar aparecerás con tu carrera y curso para que te encuentren.</p>
+    </main>
+
+    <nav id="bottomnav"></nav>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/publicar.js"></script>
+</body>
+</html>
